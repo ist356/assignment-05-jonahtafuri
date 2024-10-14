@@ -34,11 +34,8 @@ survey_states_combined = survey_data.merge(state_data, left_on='If you\'re in th
 
 ## create a new column _full_city example: "Syracuse, NY, United States"
 survey_states_combined['_full_city'] = survey_states_combined['What city do you work in?'] + ', ' + survey_states_combined['Abbreviation'] + ', ' + survey_states_combined['_country']
-# st.write("survey_states_combined full city")
-# st.dataframe(survey_states_combined['_full_city'])
 combined = survey_states_combined.merge(col_data, left_on=['year', '_full_city'], right_on=['year', 'City'], how='inner')
 combined['_annual_salary_cleaned'] = combined["What is your annual salary? (You'll indicate the currency in a later question. If you are part-time or hourly, please enter an annualized equivalent -- what you would earn if you worked the job 40 hours a week, 52 weeks a year.)"].apply(pl.clean_currency)
-# st.dataframe(combined)
 combined['_annual_salary_adjusted'] = combined.apply(lambda row: row["_annual_salary_cleaned"] * (100 / row['Cost of Living Index']), axis=1)
 
 combined.to_csv(f'cache/survey_dataset.csv', index=False)
