@@ -22,4 +22,4 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
-
+This assignment was sort of time consuming for me to figure out. It was good practice in merging and data cleaning which I know to be a fundamental skill in data analysis. I wish that the column names in the surveys hadn't been the full question on the survey but I recognize that part of the data cleaning for larger projects likely would have been creating some sort of key for the actual questions to a set of simplified columns or something else. I have a project I am working on for my internship where I have a similar frustration. While this assignment took a while it wasn't too confusing, at one point I wasn't sure where to access the 'Timestamp' column of the survey questions because it only shows up when read into a dataframe for some reason.
